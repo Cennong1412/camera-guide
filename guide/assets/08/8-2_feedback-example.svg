@@ -1,0 +1,32 @@
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="700" height="380" fill="#0c0d12" rx="16"/>
+  <text x="350" y="30" text-anchor="middle" fill="#eef0f4" font-size="15" font-weight="700">자기 피드백 회고 예시</text>
+
+  <!-- photo thumbnail -->
+  <rect x="40" y="55" width="260" height="280" rx="10" fill="#1c1f2b" stroke="#3a3d4a" stroke-width="2"/>
+  <circle cx="170" cy="160" r="40" fill="none" stroke="#4a5164" stroke-width="2"/>
+  <path d="M 170 138 L 170 182 M 148 160 L 192 160" stroke="#4a5164" stroke-width="1.5"/>
+  <text x="170" y="230" text-anchor="middle" fill="#5a6272" font-size="12">이번 주 촬영한 사진</text>
+
+  <!-- note card -->
+  <rect x="320" y="55" width="340" height="280" rx="10" fill="#17181f" stroke="#3a3d4a" stroke-width="2"/>
+  <text x="340" y="85" fill="#f2c14e" font-size="13" font-weight="700">3주차 회고 — 삼분할과 여백</text>
+
+  <g font-size="11" fill="#c7ccd6">
+    <text x="340" y="115">기술 점검</text>
+    <text x="350" y="133" fill="#9aa3b2">노출 적정, 초점은 눈에 정확히 맞음</text>
+
+    <text x="340" y="160">구도 점검</text>
+    <text x="350" y="178" fill="#9aa3b2">인물을 우측 교차점에 배치, 좌측 여백</text>
+
+    <text x="340" y="205">빛 점검</text>
+    <text x="350" y="223" fill="#9aa3b2">창가 소프트라이트, 의도적으로 활용</text>
+
+    <text x="340" y="250">의도 점검</text>
+    <text x="350" y="268" fill="#9aa3b2">차분한 분위기 전달 — 다음엔 시선</text>
+    <text x="350" y="284" fill="#9aa3b2">방향 쪽 여백을 더 남기고 싶음</text>
+  </g>
+
+  <line x1="340" y1="300" x2="640" y2="300" stroke="#2a2e3a" stroke-width="1"/>
+  <text x="340" y="322" fill="#8bd3a0" font-size="11" font-weight="700">다음 주 목표: 리딩라인 3곳 찾아보기</text>
+</svg>

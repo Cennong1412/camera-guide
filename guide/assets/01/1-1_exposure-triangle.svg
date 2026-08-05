@@ -1,0 +1,54 @@
+<svg viewBox="0 0 720 620" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b1f2a"/>
+      <stop offset="1" stop-color="#12141c"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="720" height="620" fill="url(#bg)" rx="16"/>
+
+  <!-- center label -->
+  <text x="360" y="345" text-anchor="middle" fill="#f2c14e" font-size="26" font-weight="700">노출</text>
+  <text x="360" y="373" text-anchor="middle" fill="#9aa3b2" font-size="14">EXPOSURE</text>
+
+  <!-- triangle -->
+  <polygon points="360,150 160,470 560,470" fill="none" stroke="#3d4457" stroke-width="3"/>
+
+  <!-- Aperture vertex (top) -->
+  <g>
+    <circle cx="360" cy="150" r="58" fill="#22283a" stroke="#5eb0ef" stroke-width="3"/>
+    <circle cx="360" cy="150" r="26" fill="none" stroke="#5eb0ef" stroke-width="2"/>
+    <circle cx="360" cy="150" r="14" fill="none" stroke="#5eb0ef" stroke-width="2"/>
+    <circle cx="360" cy="150" r="4" fill="#5eb0ef"/>
+    <text x="360" y="66" text-anchor="middle" fill="#5eb0ef" font-size="20" font-weight="700">조리개</text>
+    <text x="360" y="86" text-anchor="middle" fill="#7c8698" font-size="12">Aperture (F값)</text>
+    <text x="360" y="228" text-anchor="middle" fill="#c7ccd6" font-size="13">빛의 양 + 심도(배경 흐림)</text>
+  </g>
+
+  <!-- Shutter speed vertex (bottom left) -->
+  <g>
+    <circle cx="160" cy="470" r="58" fill="#22283a" stroke="#f2c14e" stroke-width="3"/>
+    <path d="M 160 470 L 160 440" stroke="#f2c14e" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 160 470 L 138 486" stroke="#f2c14e" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="160" cy="470" r="30" fill="none" stroke="#f2c14e" stroke-width="2"/>
+    <text x="160" y="565" text-anchor="middle" fill="#f2c14e" font-size="20" font-weight="700">셔터스피드</text>
+    <text x="160" y="587" text-anchor="middle" fill="#7c8698" font-size="13">Shutter Speed</text>
+    <text x="90" y="530" text-anchor="middle" fill="#c7ccd6" font-size="13">빛의 양 + 움직임 표현</text>
+  </g>
+
+  <!-- ISO vertex (bottom right) -->
+  <g>
+    <circle cx="560" cy="470" r="58" fill="#22283a" stroke="#e8735c" stroke-width="3"/>
+    <circle cx="545" cy="458" r="4" fill="#e8735c"/>
+    <circle cx="565" cy="452" r="3" fill="#e8735c"/>
+    <circle cx="578" cy="470" r="4" fill="#e8735c"/>
+    <circle cx="555" cy="482" r="3" fill="#e8735c"/>
+    <circle cx="572" cy="486" r="4" fill="#e8735c"/>
+    <circle cx="540" cy="478" r="3" fill="#e8735c"/>
+    <text x="560" y="565" text-anchor="middle" fill="#e8735c" font-size="20" font-weight="700">ISO</text>
+    <text x="560" y="587" text-anchor="middle" fill="#7c8698" font-size="13">감광도</text>
+    <text x="630" y="530" text-anchor="middle" fill="#c7ccd6" font-size="13">빛의 양 + 노이즈</text>
+  </g>
+
+  <text x="360" y="26" text-anchor="middle" fill="#eef0f4" font-size="16" font-weight="700">노출의 삼각형</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="800" height="460" fill="#0c0d12" rx="16"/>
+  <text x="400" y="32" text-anchor="middle" fill="#eef0f4" font-size="18" font-weight="700">12주 학습 로드맵</text>
+
+  <!-- phase groups -->
+  <g font-size="12" font-weight="700">
+    <!-- phase 1: weeks 1-2 -->
+    <rect x="40" y="70" width="150" height="90" rx="10" fill="#22283a" stroke="#5eb0ef" stroke-width="2"/>
+    <text x="115" y="95" text-anchor="middle" fill="#5eb0ef">1~2주차</text>
+    <text x="115" y="118" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">노출 감 잡기</text>
+    <text x="115" y="136" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">초점과 화각</text>
+
+    <!-- phase 2: weeks 3-5 -->
+    <rect x="210" y="70" width="180" height="90" rx="10" fill="#22283a" stroke="#f2c14e" stroke-width="2"/>
+    <text x="300" y="95" text-anchor="middle" fill="#f2c14e">3~5주차</text>
+    <text x="300" y="118" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">삼분할·여백</text>
+    <text x="300" y="136" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">리딩라인·색과 이야기</text>
+
+    <!-- phase 3: weeks 6-7 -->
+    <rect x="410" y="70" width="150" height="90" rx="10" fill="#22283a" stroke="#e8735c" stroke-width="2"/>
+    <text x="485" y="95" text-anchor="middle" fill="#e8735c">6~7주차</text>
+    <text x="485" y="118" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">빛의 방향·성질</text>
+    <text x="485" y="136" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">시간대·실내조명</text>
+
+    <!-- phase 4: weeks 8-9 -->
+    <rect x="580" y="70" width="180" height="90" rx="10" fill="#22283a" stroke="#8bd3a0" stroke-width="2"/>
+    <text x="670" y="95" text-anchor="middle" fill="#8bd3a0">8~9주차</text>
+    <text x="670" y="118" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">관심 장르 선택</text>
+    <text x="670" y="136" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">장르 심화</text>
+
+    <!-- phase 5: weeks 10-11 -->
+    <rect x="210" y="200" width="180" height="90" rx="10" fill="#22283a" stroke="#c58af0" stroke-width="2"/>
+    <text x="300" y="225" text-anchor="middle" fill="#c58af0">10~11주차</text>
+    <text x="300" y="248" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">보정 입문</text>
+    <text x="300" y="266" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">보정 심화·흑백</text>
+
+    <!-- phase 6: week 12 -->
+    <rect x="410" y="200" width="150" height="90" rx="10" fill="#22283a" stroke="#7fd4d4" stroke-width="2"/>
+    <text x="485" y="225" text-anchor="middle" fill="#7fd4d4">12주차</text>
+    <text x="485" y="248" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">회고와</text>
+    <text x="485" y="266" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">포트폴리오</text>
+  </g>
+
+  <!-- connecting arrows -->
+  <g stroke="#4a5164" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M 190 115 L 210 115"/>
+    <path d="M 390 115 L 410 115"/>
+    <path d="M 560 115 L 580 115"/>
+    <path d="M 670 160 L 670 180 L 390 180 L 390 200"/>
+    <path d="M 390 245 L 410 245"/>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#4a5164"/>
+    </marker>
+  </defs>
+
+  <text x="400" y="340" text-anchor="middle" fill="#9aa3b2" font-size="13">각 주차는 "읽기 → 실습 → 셀렉션 → 회고"의 순환으로 진행됩니다</text>
+  <text x="400" y="368" text-anchor="middle" fill="#7c8698" font-size="12">관심 장르와 진도에 따라 순서와 기간은 유연하게 조정 가능합니다</text>
+</svg>

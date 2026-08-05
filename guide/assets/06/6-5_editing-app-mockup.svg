@@ -1,0 +1,44 @@
+<svg viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="640" height="380" fill="#0c0d12" rx="16"/>
+  <text x="320" y="30" text-anchor="middle" fill="#eef0f4" font-size="15" font-weight="700">보정 앱 도구 화면 예시 (일반적인 구성, 특정 앱의 실제 화면 아님)</text>
+
+  <!-- image preview area -->
+  <rect x="40" y="55" width="560" height="180" rx="10" fill="#1c1f2b" stroke="#3a3d4a" stroke-width="2"/>
+  <circle cx="320" cy="145" r="45" fill="none" stroke="#4a5164" stroke-width="2"/>
+  <path d="M 320 118 L 320 172 M 293 145 L 347 145" stroke="#4a5164" stroke-width="1.5"/>
+  <text x="320" y="220" text-anchor="middle" fill="#5a6272" font-size="12">사진 미리보기 영역</text>
+
+  <!-- tool row -->
+  <g font-size="11" font-weight="700">
+    <g>
+      <circle cx="90" cy="285" r="30" fill="#22283a" stroke="#5eb0ef" stroke-width="2"/>
+      <text x="90" y="290" text-anchor="middle" fill="#5eb0ef">기본</text>
+      <text x="90" y="330" text-anchor="middle" fill="#9aa3b2" font-size="10">Tune Image</text>
+    </g>
+    <g>
+      <circle cx="180" cy="285" r="30" fill="#22283a" stroke="#f2c14e" stroke-width="2"/>
+      <text x="180" y="290" text-anchor="middle" fill="#f2c14e">선택</text>
+      <text x="180" y="330" text-anchor="middle" fill="#9aa3b2" font-size="10">Selective</text>
+    </g>
+    <g>
+      <circle cx="270" cy="285" r="30" fill="#22283a" stroke="#8bd3a0" stroke-width="2"/>
+      <text x="270" y="290" text-anchor="middle" fill="#8bd3a0">곡선</text>
+      <text x="270" y="330" text-anchor="middle" fill="#9aa3b2" font-size="10">Curves</text>
+    </g>
+    <g>
+      <circle cx="360" cy="285" r="30" fill="#22283a" stroke="#e8735c" stroke-width="2"/>
+      <text x="360" y="290" text-anchor="middle" fill="#e8735c">디테일</text>
+      <text x="360" y="330" text-anchor="middle" fill="#9aa3b2" font-size="10">Details</text>
+    </g>
+    <g>
+      <circle cx="450" cy="285" r="30" fill="#22283a" stroke="#c58af0" stroke-width="2"/>
+      <text x="450" y="290" text-anchor="middle" fill="#c58af0">흑백</text>
+      <text x="450" y="330" text-anchor="middle" fill="#9aa3b2" font-size="10">B&amp;W</text>
+    </g>
+    <g>
+      <circle cx="540" cy="285" r="30" fill="#22283a" stroke="#7fd4d4" stroke-width="2"/>
+      <text x="540" y="290" text-anchor="middle" fill="#7fd4d4">복구</text>
+      <text x="540" y="330" text-anchor="middle" fill="#9aa3b2" font-size="10">Healing</text>
+    </g>
+  </g>
+</svg>

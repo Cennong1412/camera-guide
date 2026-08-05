@@ -1,0 +1,32 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="720" height="460" fill="#14161f" rx="16"/>
+  <text x="360" y="34" text-anchor="middle" fill="#eef0f4" font-size="18" font-weight="700">황금비율과 피보나치 나선</text>
+
+  <!-- frame -->
+  <rect x="60" y="60" width="600" height="330" fill="#1c1f2b" stroke="#3a3d4a" stroke-width="2"/>
+
+  <!-- golden ratio grid lines (approx 0.382 / 0.618 splits, slightly inside of thirds) -->
+  <g stroke="#4a5164" stroke-width="1.5" stroke-dasharray="5 4">
+    <line x1="289" y1="60" x2="289" y2="390"/>
+    <line x1="466" y1="60" x2="466" y2="390"/>
+    <line x1="60" y1="185" x2="660" y2="185"/>
+    <line x1="60" y1="298" x2="660" y2="298"/>
+  </g>
+
+  <!-- fibonacci spiral approximated with quarter-circle arcs, spiraling inward toward lower-right focal square -->
+  <path d="M 660 60
+    A 330 330 0 0 1 330 390
+    A 204 204 0 0 1 126 186
+    A 126 126 0 0 1 252 60
+    A 78 78 0 0 1 330 138
+    A 48 48 0 0 1 282 186
+    A 30 30 0 0 1 312 216"
+    fill="none" stroke="#f2c14e" stroke-width="2.5"/>
+
+  <!-- focal point -->
+  <circle cx="312" cy="216" r="6" fill="#f2c14e"/>
+  <text x="312" y="240" text-anchor="middle" fill="#f2c14e" font-size="12" font-weight="700">주제 배치 지점</text>
+
+  <text x="360" y="420" text-anchor="middle" fill="#7c8698" font-size="12">나선이 소용돌이치며 좁아지는 안쪽 지점에 주제를 두면 시선이 자연스럽게 그곳으로 모입니다</text>
+  <text x="360" y="442" text-anchor="middle" fill="#5a6272" font-size="11">점선은 삼분할선보다 살짝 안쪽에 위치한 황금비율 분할선입니다</text>
+</svg>

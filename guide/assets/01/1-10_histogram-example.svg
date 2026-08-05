@@ -1,0 +1,32 @@
+<svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="720" height="420" fill="#14161f" rx="16"/>
+  <text x="360" y="34" text-anchor="middle" fill="#eef0f4" font-size="18" font-weight="700">히스토그램 읽는 법</text>
+
+  <!-- axes -->
+  <line x1="70" y1="330" x2="650" y2="330" stroke="#5a6272" stroke-width="2"/>
+  <line x1="70" y1="70" x2="70" y2="330" stroke="#5a6272" stroke-width="2"/>
+
+  <!-- histogram curve (mountain shape) as filled path -->
+  <path d="M 70 330
+    C 130 328, 160 300, 190 260
+    C 230 210, 250 150, 300 120
+    C 350 95, 380 90, 420 105
+    C 470 125, 490 180, 540 240
+    C 570 275, 600 310, 650 328
+    L 650 330 L 70 330 Z"
+    fill="#f2c14e" fill-opacity="0.35" stroke="#f2c14e" stroke-width="2.5"/>
+
+  <!-- shadow clipping zone -->
+  <rect x="70" y="70" width="35" height="260" fill="#e8735c" fill-opacity="0.25"/>
+  <line x1="105" y1="70" x2="105" y2="330" stroke="#e8735c" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- highlight clipping zone -->
+  <rect x="615" y="70" width="35" height="260" fill="#e8735c" fill-opacity="0.25"/>
+  <line x1="615" y1="70" x2="615" y2="330" stroke="#e8735c" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- labels -->
+  <text x="87" y="352" text-anchor="middle" fill="#e8735c" font-size="12" font-weight="700">암부 손실</text>
+  <text x="632" y="352" text-anchor="middle" fill="#e8735c" font-size="12" font-weight="700">하이라이트 손실</text>
+
+  <text x="360" y="390" text-anchor="middle" fill="#7c8698" font-size="12">가로축: 밝기 단계 (왼쪽=어두움 → 오른쪽=밝음) · 세로축: 픽셀 수</text>
+</svg>

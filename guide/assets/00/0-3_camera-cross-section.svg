@@ -1,0 +1,42 @@
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="720" height="380" fill="#14161f" rx="16"/>
+  <text x="360" y="34" text-anchor="middle" fill="#eef0f4" font-size="18" font-weight="700">카메라 단면도 — 빛이 기록되는 과정</text>
+
+  <!-- scene (subject) -->
+  <g>
+    <circle cx="70" cy="200" r="26" fill="none" stroke="#9aa3b2" stroke-width="2"/>
+    <path d="M 70 174 L 70 226 M 44 200 L 96 200" stroke="#9aa3b2" stroke-width="1.5"/>
+    <text x="70" y="250" text-anchor="middle" fill="#9aa3b2" font-size="13">피사체</text>
+  </g>
+
+  <!-- light rays converging through lens -->
+  <path d="M 96 178 L 260 200 M 96 222 L 260 200 M 96 200 L 260 200" stroke="#f2c14e" stroke-width="1.5" fill="none" opacity="0.85"/>
+
+  <!-- lens -->
+  <g>
+    <ellipse cx="270" cy="200" rx="16" ry="70" fill="#22283a" stroke="#5eb0ef" stroke-width="3"/>
+    <text x="270" y="290" text-anchor="middle" fill="#5eb0ef" font-size="14" font-weight="700">렌즈</text>
+  </g>
+
+  <!-- converging rays through lens to aperture -->
+  <path d="M 260 200 L 400 165 M 260 200 L 400 200 M 260 200 L 400 235" stroke="#f2c14e" stroke-width="1.5" fill="none" opacity="0.85"/>
+
+  <!-- aperture (iris blades) -->
+  <g>
+    <rect x="392" y="130" width="16" height="140" fill="#22283a" stroke="#e8735c" stroke-width="3"/>
+    <rect x="392" y="130" width="16" height="45" fill="#e8735c" opacity="0.5"/>
+    <rect x="392" y="255" width="16" height="15" fill="#e8735c" opacity="0.5"/>
+    <text x="400" y="290" text-anchor="middle" fill="#e8735c" font-size="14" font-weight="700">조리개</text>
+  </g>
+
+  <!-- rays fanning out after aperture to sensor -->
+  <path d="M 400 200 L 610 120 M 400 200 L 610 200 M 400 200 L 610 280" stroke="#f2c14e" stroke-width="1.5" fill="none" opacity="0.85"/>
+
+  <!-- sensor -->
+  <g>
+    <rect x="602" y="110" width="16" height="180" fill="#22283a" stroke="#8bd3a0" stroke-width="3"/>
+    <text x="610" y="316" text-anchor="middle" fill="#8bd3a0" font-size="14" font-weight="700">센서</text>
+  </g>
+
+  <text x="360" y="345" text-anchor="middle" fill="#7c8698" font-size="13">빛 → 렌즈로 굴절 → 조리개가 빛의 양 조절 → 센서에 상이 맺혀 이미지로 기록</text>
+</svg>

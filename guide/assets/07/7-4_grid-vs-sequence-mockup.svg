@@ -1,0 +1,30 @@
+<svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="640" height="340" fill="#0c0d12" rx="16"/>
+  <text x="320" y="28" text-anchor="middle" fill="#eef0f4" font-size="15" font-weight="700">피드형 그리드 vs 스크롤형 시퀀스</text>
+
+  <!-- left: instagram grid -->
+  <g>
+    <text x="150" y="55" text-anchor="middle" fill="#5eb0ef" font-size="12" font-weight="700">인스타그램 그리드 (3x3)</text>
+    <g stroke="#3a3d4a" stroke-width="2" fill="#1c1f2b">
+      <rect x="50" y="70" width="66" height="66" rx="4"/><rect x="120" y="70" width="66" height="66" rx="4"/><rect x="190" y="70" width="66" height="66" rx="4"/>
+      <rect x="50" y="140" width="66" height="66" rx="4"/><rect x="120" y="140" width="66" height="66" rx="4"/><rect x="190" y="140" width="66" height="66" rx="4"/>
+      <rect x="50" y="210" width="66" height="66" rx="4"/><rect x="120" y="210" width="66" height="66" rx="4"/><rect x="190" y="210" width="66" height="66" rx="4"/>
+    </g>
+    <text x="150" y="300" text-anchor="middle" fill="#9aa3b2" font-size="10">한 줄 3장씩, 정사각형 톤 균형이 우선</text>
+  </g>
+
+  <!-- divider -->
+  <line x1="320" y1="55" x2="320" y2="300" stroke="#3a3d4a" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- right: sequence -->
+  <g>
+    <text x="480" y="55" text-anchor="middle" fill="#f2c14e" font-size="12" font-weight="700">포트폴리오 스크롤 시퀀스</text>
+    <g stroke="#3a3d4a" stroke-width="2" fill="#1c1f2b">
+      <rect x="370" y="70" width="220" height="50" rx="4"/>
+      <rect x="370" y="128" width="100" height="50" rx="4"/>
+      <rect x="480" y="128" width="110" height="50" rx="4"/>
+      <rect x="370" y="186" width="220" height="70" rx="4"/>
+    </g>
+    <text x="480" y="290" text-anchor="middle" fill="#9aa3b2" font-size="10">넓은 샷·클로즈업을 교차해 리듬과 흐름을 강조</text>
+  </g>
+</svg>

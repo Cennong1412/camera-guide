@@ -1,0 +1,48 @@
+<svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="800" height="260" fill="#0c0d12" rx="16"/>
+  <text x="400" y="32" text-anchor="middle" fill="#eef0f4" font-size="18" font-weight="700">13~24주 확장 로드맵</text>
+
+  <g font-size="12" font-weight="700">
+    <!-- phase 1: weeks 13-16 -->
+    <rect x="30" y="65" width="165" height="110" rx="10" fill="#22283a" stroke="#5eb0ef" stroke-width="2"/>
+    <text x="112" y="90" text-anchor="middle" fill="#5eb0ef">13~16주차</text>
+    <text x="112" y="115" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">장르 집중 심화</text>
+    <text x="112" y="133" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">(더 좁고 구체적인</text>
+    <text x="112" y="150" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">주제로 재도전)</text>
+
+    <!-- phase 2: weeks 17-20 -->
+    <rect x="220" y="65" width="165" height="110" rx="10" fill="#22283a" stroke="#f2c14e" stroke-width="2"/>
+    <text x="302" y="90" text-anchor="middle" fill="#f2c14e">17~20주차</text>
+    <text x="302" y="115" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">두 번째 장르 탐색</text>
+    <text x="302" y="133" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">(새 장르로</text>
+    <text x="302" y="150" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">시야 넓히기)</text>
+
+    <!-- phase 3: weeks 21-24 -->
+    <rect x="410" y="65" width="165" height="110" rx="10" fill="#22283a" stroke="#8bd3a0" stroke-width="2"/>
+    <text x="492" y="90" text-anchor="middle" fill="#8bd3a0">21~24주차</text>
+    <text x="492" y="115" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">개인 프로젝트 진행</text>
+    <text x="492" y="133" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">(4주간 지속,</text>
+    <text x="492" y="150" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">시리즈로 완성)</text>
+
+    <!-- phase 4: week 25+ open-ended -->
+    <rect x="600" y="65" width="170" height="110" rx="10" fill="#1c1f2b" stroke="#9aa3b2" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="685" y="90" text-anchor="middle" fill="#9aa3b2">25주차~</text>
+    <text x="685" y="115" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">스스로 설계하는</text>
+    <text x="685" y="133" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">장기 루틴</text>
+    <text x="685" y="150" text-anchor="middle" fill="#c7ccd6" font-size="11" font-weight="400">(느슨한 순환 유지)</text>
+  </g>
+
+  <g stroke="#4a5164" stroke-width="2" fill="none" marker-end="url(#arrow8)">
+    <path d="M 195 120 L 220 120"/>
+    <path d="M 385 120 L 410 120"/>
+    <path d="M 575 120 L 600 120"/>
+  </g>
+  <defs>
+    <marker id="arrow8" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#4a5164"/>
+    </marker>
+  </defs>
+
+  <text x="400" y="210" text-anchor="middle" fill="#9aa3b2" font-size="12">12주 기본 과정을 마친 뒤 이어가는 확장 커리큘럼입니다</text>
+  <text x="400" y="232" text-anchor="middle" fill="#7c8698" font-size="11">25주차부터는 정해진 틀 없이 8.1의 순환을 스스로 유지하는 단계입니다</text>
+</svg>

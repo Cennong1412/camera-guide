@@ -1,0 +1,49 @@
+<svg viewBox="0 0 500 620" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="500" height="620" fill="#0c0d12" rx="16"/>
+  <text x="250" y="30" text-anchor="middle" fill="#eef0f4" font-size="15" font-weight="700">프로 모드 화면 예시 (일반적인 배치, 실제 기종과 다를 수 있음)</text>
+
+  <!-- phone body -->
+  <rect x="90" y="55" width="320" height="530" rx="34" fill="#17181f" stroke="#3a3d4a" stroke-width="3"/>
+  <rect x="106" y="75" width="288" height="400" rx="6" fill="#23262f"/>
+
+  <!-- viewfinder scene placeholder -->
+  <circle cx="250" cy="220" r="55" fill="none" stroke="#5a6272" stroke-width="2"/>
+  <path d="M 250 195 L 250 245 M 225 220 L 275 220" stroke="#5a6272" stroke-width="1.5"/>
+  <text x="250" y="300" text-anchor="middle" fill="#5a6272" font-size="12">뷰파인더 화면</text>
+
+  <!-- grid overlay -->
+  <line x1="204" y1="75" x2="204" y2="475" stroke="#3a3d4a" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="302" y1="75" x2="302" y2="475" stroke="#3a3d4a" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="106" y1="208" x2="394" y2="208" stroke="#3a3d4a" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="106" y1="342" x2="394" y2="342" stroke="#3a3d4a" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- dial row -->
+  <g font-size="12" font-weight="700">
+    <rect x="106" y="490" width="52" height="52" rx="8" fill="#22283a" stroke="#5eb0ef" stroke-width="2"/>
+    <text x="132" y="521" text-anchor="middle" fill="#5eb0ef">ISO</text>
+
+    <rect x="168" y="490" width="52" height="52" rx="8" fill="#22283a" stroke="#f2c14e" stroke-width="2"/>
+    <text x="194" y="521" text-anchor="middle" fill="#f2c14e">SS</text>
+
+    <rect x="230" y="490" width="52" height="52" rx="8" fill="#22283a" stroke="#8bd3a0" stroke-width="2"/>
+    <text x="256" y="521" text-anchor="middle" fill="#8bd3a0">WB</text>
+
+    <rect x="292" y="490" width="52" height="52" rx="8" fill="#22283a" stroke="#e8735c" stroke-width="2"/>
+    <text x="318" y="521" text-anchor="middle" fill="#e8735c">EV</text>
+
+    <rect x="354" y="490" width="40" height="52" rx="8" fill="#22283a" stroke="#c58af0" stroke-width="2"/>
+    <text x="374" y="521" text-anchor="middle" fill="#c58af0" font-size="11">MF</text>
+  </g>
+
+  <!-- labels below -->
+  <g font-size="11" fill="#9aa3b2">
+    <text x="132" y="558">감광도</text>
+    <text x="194" y="558">셔터</text>
+    <text x="256" y="558">색온도</text>
+    <text x="318" y="558">노출보정</text>
+    <text x="374" y="558">초점</text>
+  </g>
+
+  <!-- shutter button -->
+  <circle cx="250" cy="450" r="20" fill="none" stroke="#eef0f4" stroke-width="3"/>
+</svg>
