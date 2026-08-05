@@ -1,5 +1,5 @@
 // 캐시 버전을 올리면 이전 캐시가 자동으로 정리됩니다.
-const CACHE_NAME = "camera-guide-v2";
+const CACHE_NAME = "camera-guide-v3";
 
 const CORE_ASSETS = [
   "./",
