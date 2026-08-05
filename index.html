@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<title>촬영 설정 가이드</title>
+<meta name="description" content="대상/환경/목적/의도/안정화/기법을 고르면 스마트폰 카메라 설정을 추천해주는 가이드">
+<meta name="theme-color" content="#1b1b1f">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="촬영설정">
+<link rel="icon" href="icons/icon-192.png">
+<style>
+  :root{
+    --bg:#161619;
+    --card:#1f1f24;
+    --card2:#26262c;
+    --ink:#f1efe9;
+    --sub:#a3a0ac;
+    --accent:#e0a13c;
+    --accent2:#7fa0c9;
+    --line:#34343c;
+    --danger:#d97a6c;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    padding-bottom:48px;
+  }
+  header{
+    padding:22px 16px 16px;
+    background:linear-gradient(135deg,#2a2114,#1b1b1f 70%);
+    border-bottom:1px solid var(--line);
+  }
+  header h1{margin:0 0 4px;font-size:1.3rem;}
+  header p{margin:0;font-size:0.82rem;color:var(--sub);}
+  main{padding:14px 14px 0;max-width:640px;margin:0 auto;}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:14px 16px;
+    margin-bottom:12px;
+  }
+  .field{margin-bottom:14px;}
+  .field:last-child{margin-bottom:0;}
+  label{display:block;font-size:0.8rem;color:var(--sub);margin-bottom:6px;font-weight:600;}
+  select{
+    width:100%;
+    padding:11px 12px;
+    background:var(--card2);
+    color:var(--ink);
+    border:1px solid var(--line);
+    border-radius:10px;
+    font-size:0.95rem;
+    appearance:none;
+    -webkit-appearance:none;
+  }
+  select:disabled{opacity:0.4;}
+  .hint{font-size:0.72rem;color:var(--sub);margin-top:5px;}
+  .warn{font-size:0.78rem;color:var(--danger);margin-top:6px;display:none;}
+  .warn.show{display:block;}
+  button.primary{
+    width:100%;
+    padding:13px;
+    background:var(--accent);
+    color:#1b1408;
+    border:none;
+    border-radius:12px;
+    font-size:1rem;
+    font-weight:700;
+    margin-top:4px;
+    margin-bottom:16px;
+  }
+  button.primary:disabled{opacity:0.4;}
+  #result{display:none;}
+  #result.show{display:block;}
+  .headline{
+    background:linear-gradient(135deg,#3a2c14,#241c10);
+    border:1px solid #4a3a1c;
+    border-radius:14px;
+    padding:16px;
+    margin-bottom:12px;
+  }
+  .headline .tag{font-size:0.72rem;color:var(--accent);font-weight:700;letter-spacing:0.02em;}
+  .headline .val{font-size:1.25rem;font-weight:800;margin-top:4px;}
+  .row{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    padding:9px 0;
+    border-bottom:1px solid var(--line);
+    font-size:0.88rem;
+  }
+  .row:last-child{border-bottom:none;}
+  .row .k{color:var(--sub);flex:0 0 34%;}
+  .row .v{flex:1;text-align:right;}
+  .section-title{font-size:0.75rem;color:var(--accent2);font-weight:700;margin:2px 0 8px;letter-spacing:0.02em;}
+  .ref-card{border-color:var(--line);}
+  .ref-card .section-title{color:var(--sub);}
+  .note{font-size:0.75rem;color:var(--sub);margin-top:10px;line-height:1.5;}
+  footer{max-width:640px;margin:0 auto;padding:10px 16px 30px;font-size:0.7rem;color:var(--sub);text-align:center;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📷 촬영 설정 가이드</h1>
+  <p>대상 · 환경 · 목적 · 의도 · 안정화 · 기법을 고르면 스마트폰 카메라 설정을 추천해드려요</p>
+</header>
+
+<main>
+  <div class="card">
+    <div class="field">
+      <label for="sel-subject">대상 (무엇을 찍나요)</label>
+      <select id="sel-subject"></select>
+    </div>
+    <div class="field">
+      <label for="sel-env">환경 (장소·시간대·날씨·광조건)</label>
+      <select id="sel-env"></select>
+      <div class="hint">대상에 맞지 않는 환경은 자동으로 숨겨져요</div>
+    </div>
+    <div class="field">
+      <label for="sel-purpose">목적</label>
+      <select id="sel-purpose"></select>
+    </div>
+    <div class="field">
+      <label for="sel-intent">의도 (초점 표현)</label>
+      <select id="sel-intent"></select>
+    </div>
+    <div class="field">
+      <label for="sel-stab">안정화</label>
+      <select id="sel-stab"></select>
+    </div>
+    <div class="field">
+      <label for="sel-tech">기법</label>
+      <select id="sel-tech"></select>
+    </div>
+    <div class="warn" id="warn">이 조합은 촬영이 어렵거나 의미가 없어요. 대상/환경/기법을 다시 확인해주세요.</div>
+  </div>
+
+  <button class="primary" id="btn-calc">설정 추천 보기</button>
+
+  <div id="result"></div>
+</main>
+
+<footer>스마트폰 카메라 기준 추천값이며 기종에 따라 지원 여부가 다를 수 있어요</footer>
+
+<script>
+/* ===================== 데이터 (camera_settings_spec.json 축약) ===================== */
+const SUBJECTS = [
+  ["인물","프로필/증명사진"],["인물","개인 스냅"],["인물","그룹샷"],["인물","웨딩"],["인물","신생아/아기"],["인물","실루엣"],
+  ["움직이는 대상","스포츠/액션"],["움직이는 대상","동물"],["움직이는 대상","차량"],["움직이는 대상","춤/무대 퍼포먼스"],
+  ["풍경","일출/일몰"],["풍경","산/바다"],["풍경","도시 스카이라인"],["풍경","설경"],["풍경","논밭/시골"],
+  ["음식",null],
+  ["제품/상품","주얼리"],["제품/상품","의류"],
+  ["건축/인테리어",null],
+  ["천체",null],
+  ["매크로",null],
+  ["불빛 계열","불꽃놀이"],["불빛 계열","야간 라이트 트레일"],
+  ["실내 이벤트/공연","콘서트"],["실내 이벤트/공연","강연"],["실내 이벤트/공연","무대 조명"]
+];
+const ENVIRONMENTS = [
+  ["장소","실외-도심"],["장소","실외-자연"],["장소","실내-자연광 있음"],["장소","실내-자연광 없음"],["장소","스투디오 (조명 있음)"],["장소","차량/이동 중"],
+  ["시간대","골든아워 (노을 직전)"],["시간대","블루 아워"],["시간대","한낮 (하드라이트)"],["시간대","야간"],["시간대","심야 (천체용)"],
+  ["날씨","맑음"],["날씨","흐림 (부드러운 광)"],["날씨","비"],["날씨","눈"],["날씨","안개/미스트"],["날씨","강풍"],
+  ["광조건","역광"],["광조건","측광"],["광조건","순광"],["광조건","인공조명"],["광조건","혼합광"],["광조건","저조도"]
+];
+const PURPOSES = ["SNS/일상공유용","기록/다큐멘터리/저널리즘","예술적 표현 - 장노출","예술적 표현 - 의도적 카메라 흔들림","이벤트 기록","개인 소장/추억용"];
+const INTENTS = ["아웃포커싱","팬포커스","모션블러"];
+const STABS = ["삼각대 사용","삼각대 없음"];
+const TECHS = ["단일 컷","연속 촬영 (버스트)","파노라마"];
+
+// 대상 대분류 -> 프로모드 참고값 (조리개/셔터/ISO/측광/초점거리)
+const BASE = {
+  "인물": {aperture:"f/1.8~f/4 (아웃포커싱 원하면 최대개방)", shutter:"1/125~1/250", iso:"100~800", metering:"평가측광(또는 얼굴기준)", focal:"인물모드 화각(망원 쪽)"},
+  "움직이는 대상": {aperture:"f/2.8~f/5.6", shutter:"1/1000~1/2000(정지) 또는 1/30~1/60(패닝)", iso:"400~3200", metering:"평가측광", focal:"망원 쪽"},
+  "풍경": {aperture:"f/8~f/16", shutter:"주간 1/125, 장노출시 1초 이상", iso:"100(기본)", metering:"평가측광", focal:"광각"},
+  "음식": {aperture:"f/2.8~f/5.6", shutter:"1/60~1/125", iso:"100~400", metering:"평가측광/중앙중점", focal:"기본~약간 접사"},
+  "제품/상품": {aperture:"f/8~f/16", shutter:"1/125~1/200", iso:"100", metering:"스팟", focal:"기본"},
+  "건축/인테리어": {aperture:"f/8~f/11", shutter:"삼각대 전제, 저속 가능", iso:"100", metering:"평가측광", focal:"광각"},
+  "천체": {aperture:"최대개방(f/1.4~2.8)", shutter:"10~25초", iso:"1600~6400", metering:"수동(M) - 측광 무의미", focal:"광각"},
+  "매크로": {aperture:"f/8~f/16", shutter:"1/125 이상(핸드헬드) 또는 삼각대+저속", iso:"400~800", metering:"스팟", focal:"매크로(근접)"},
+  "불빛 계열": {aperture:"f/8~f/11(불꽃놀이) / f/8~16(트레일)", shutter:"2~8초(불꽃놀이) / 5~30초(트레일)", iso:"100~200", metering:"수동(M)", focal:"기본~광각"},
+  "실내 이벤트/공연": {aperture:"f/2.8~f/4", shutter:"1/125~1/250", iso:"800~3200", metering:"스팟(무대조명 대비)", focal:"망원 쪽"}
+};
+
+/* ===================== validity_rules (R1~R7) ===================== */
+function envAllowedForSubject(major, minor){
+  // R1 천체
+  if(major==="천체") return e => ["심야 (천체용)","야간","저조도","맑음"].includes(e[1]);
+  // R2 일출일몰
+  if(minor==="일출/일몰") return e => ["골든아워 (노을 직전)","블루 아워","맑음","흐림 (부드러운 광)","역광","순광"].includes(e[1]);
+  // R3 불빛계열
+  if(major==="불빛 계열") return e => ["야간","심야 (천체용)","저조도","혼합광","인공조명"].includes(e[1]);
+  return null;
+}
+function isEnvExcludedBySubject(major, minor, env){
+  // R4 실내전용 (신생아/아기, 콘서트, 강연, 무대 조명): 날씨 전체 + 차량이동중/심야 제외
+  if(["신생아/아기","콘서트","강연","무대 조명"].includes(minor)){
+    if(env[0]==="날씨") return true;
+    if(["차량/이동 중","심야 (천체용)"].includes(env[1])) return true;
+  }
+  // R5 매크로: 차량이동중 제외
+  if(major==="매크로" && env[1]==="차량/이동 중") return true;
+  return false;
+}
+function isSubjectValidForEnv(major, env){
+  // R7 차량/이동 중: 풍경/움직이는 대상/불빛 계열만
+  if(env[1]==="차량/이동 중") return ["풍경","움직이는 대상","불빛 계열"].includes(major);
+  return true;
+}
+function isSubjectValidForTech(major, tech){
+  // R6 파노라마: 풍경/건축·인테리어만
+  if(tech==="파노라마") return ["풍경","건축/인테리어"].includes(major);
+  return true;
+}
+function isComboValid(subj, env, tech){
+  const [major, minor] = subj;
+  const allowFn = envAllowedForSubject(major, minor);
+  if(allowFn && !allowFn(env)) return false;
+  if(isEnvExcludedBySubject(major, minor, env)) return false;
+  if(!isSubjectValidForEnv(major, env)) return false;
+  if(!isSubjectValidForTech(major, tech)) return false;
+  return true;
+}
+
+/* ===================== UI 채우기 ===================== */
+const $ = id => document.getElementById(id);
+function label(pair){ return pair[1] ? `${pair[0]} · ${pair[1]}` : pair[0]; }
+
+function fillSelect(sel, items, toLabel){
+  sel.innerHTML = "";
+  items.forEach((it,i)=>{
+    const opt = document.createElement("option");
+    opt.value = i;
+    opt.textContent = toLabel(it);
+    sel.appendChild(opt);
+  });
+}
+fillSelect($("sel-subject"), SUBJECTS, label);
+fillSelect($("sel-purpose"), PURPOSES, v=>v);
+fillSelect($("sel-intent"), INTENTS, v=>v);
+fillSelect($("sel-stab"), STABS, v=>v);
+fillSelect($("sel-tech"), TECHS, v=>v);
+
+function currentSubject(){ return SUBJECTS[+$("sel-subject").value]; }
+function currentTech(){ return TECHS[+$("sel-tech").value]; }
+
+function refreshEnvOptions(){
+  const subj = currentSubject();
+  const tech = currentTech();
+  const prevVal = $("sel-env").value;
+  const items = ENVIRONMENTS.filter(env => isComboValid(subj, env, tech));
+  fillSelect($("sel-env"), items, label);
+  $("sel-env")._items = items;
+  if(prevVal !== "" && +prevVal < items.length) $("sel-env").value = prevVal;
+  checkWarn();
+}
+function refreshTechOptions(){
+  const subj = currentSubject();
+  const prevVal = $("sel-tech").value;
+  const items = TECHS.filter(t => isSubjectValidForTech(subj[0], t));
+  fillSelect($("sel-tech"), items, v=>v);
+  $("sel-tech")._items = items;
+  if(prevVal !== "" && +prevVal < items.length) $("sel-tech").value = prevVal;
+}
+function checkWarn(){
+  const items = $("sel-env")._items || [];
+  $("warn").classList.toggle("show", items.length === 0);
+  $("btn-calc").disabled = items.length === 0;
+}
+
+$("sel-subject").addEventListener("change", ()=>{ refreshTechOptions(); refreshEnvOptions(); });
+$("sel-tech").addEventListener("change", refreshEnvOptions);
+refreshTechOptions();
+refreshEnvOptions();
+
+/* ===================== 추천 로직 ===================== */
+function envNotes(env){
+  const [maj, min] = env;
+  const n = {iso:[], wb:[], shutter:[], exp:[], metering:[], focus:[]};
+  if(maj==="장소"){
+    if(min==="실내-자연광 없음" || min==="스투디오 (조명 있음)") { n.iso.push("실내 조명 밝기에 맞춰 상향"); n.wb.push("인공광(텅스텐/형광등) 프리셋 고려"); }
+    if(min==="차량/이동 중") n.shutter.push("흔들림 방지 위해 셔터 빠르게(가능하면 버스트 활용)");
+  }
+  if(maj==="시간대"){
+    if(min==="골든아워 (노을 직전)" || min==="블루 아워"){ n.wb.push("맑음/그늘 프리셋이 색감 살리기 좋음"); n.exp.push("±0.3 정도 미세조정"); }
+    if(min==="한낮 (하드라이트)") n.iso.push("최저(100)로 유지");
+    if(min==="야간" || min==="심야 (천체용)"){ n.iso.push("상향 필요(야간모드 권장)"); n.shutter.push("느려짐 - 흔들림 주의"); }
+  }
+  if(maj==="날씨"){
+    if(min==="흐림 (부드러운 광)") n.wb.push("흐림 프리셋 고려");
+    if(min==="눈" || min==="비") n.exp.push("+0.3~0.7 (밝은 반사광에 어두워지는 것 보정)");
+  }
+  if(maj==="광조건"){
+    if(min==="역광"){ n.exp.push("+0.7~1.3 (피사체 노출 확보)"); n.metering.push("피사체 스팟 측광 권장"); }
+    if(min==="저조도") { n.iso.push("상향 필요(야간모드 권장)"); n.focus.push("초점 잡기 어려우면 밝은 부분 탭"); }
+  }
+  return n;
+}
+
+function purposeNotes(purpose){
+  switch(purpose){
+    case "SNS/일상공유용": return {style:"선명한 필터(비비드 계열) 추천", format:"JPEG"};
+    case "기록/다큐멘터리/저널리즘": return {style:"표준(보정 최소화)", format:"RAW 지원 기종이면 RAW 권장"};
+    case "예술적 표현 - 장노출": return {shootingModeOverride:"프로모드/야간모드 (장노출)", note:"삼각대 필수, 셔터 강제로 느리게"};
+    case "예술적 표현 - 의도적 카메라 흔들림": return {shootingModeOverride:"프로모드(수동, 셔터 1/15~1/4)", note:"손떨림 보정은 꺼두는 느낌으로 일부러 움직이며 촬영"};
+    case "이벤트 기록": return {style:"표준", format:"RAW+JPEG 지원 기종이면 활용", drive:"연속촬영 선호"};
+    case "개인 소장/추억용": return {style:"자연스럽게", format:"JPEG"};
+  }
+  return {};
+}
+
+function shootingModeFor(subj, env, purpose, intent, tech){
+  const [major] = subj;
+  if(tech==="파노라마") return "파노라마 모드";
+  if(major==="매크로") return "매크로 모드(근접 자동전환)";
+  if(purpose==="예술적 표현 - 장노출") return "프로모드(장노출) 또는 야간모드";
+  if(purpose==="예술적 표현 - 의도적 카메라 흔들림") return "프로모드(수동)";
+  if(major==="천체" || major==="불빛 계열") return "야간모드 또는 프로모드(수동 장노출)";
+  if(major==="인물") return intent==="아웃포커싱" ? "인물모드(아웃포커싱)" : "인물모드";
+  if(major==="움직이는 대상") return "액션/연속촬영(버스트)";
+  if(env[1]==="저조도" || env[1]==="야간" || env[1]==="심야 (천체용)") return "야간모드";
+  if(major==="음식") return "음식 모드(지원 기종) 또는 일반모드 (근접)";
+  return "일반(자동) 모드";
+}
+
+function lensFor(major){
+  if(["풍경","건축/인테리어"].includes(major)) return "광각 렌즈";
+  if(["움직이는 대상","실내 이벤트/공연","인물"].includes(major)) return "망원 렌즈 (인물은 기본도 가능)";
+  if(major==="매크로") return "매크로/망원 렌즈 (근접모드)";
+  return "기본 렌즈";
+}
+
+function driveModeFor(tech, intent, purpose){
+  if(tech==="연속 촬영 (버스트)") return "연속촬영(버스트)";
+  if(tech==="파노라마") return "파노라마 모드 내 자동";
+  if(purpose==="이벤트 기록") return "연속촬영(버스트) 권장";
+  if(intent==="모션블러") return "단일 컷 (셔터 느리게)";
+  return "단일 컷";
+}
+
+function flashFor(major, env){
+  if(["천체","불빛 계열","풍경"].includes(major)) return "끔(off)";
+  if(env[0]==="광조건" && env[1]==="저조도" && major==="인물") return "필요시 켬(역광/저조도 보조광)";
+  if(env[1]==="역광") return "역광 보정용으로 켜기 고려";
+  return "자동 또는 끔";
+}
+
+function focusTip(intent, env){
+  if(intent==="아웃포커싱") return "피사체를 탭해 초점 고정 후, 배경 흐림(조리개) 슬라이더로 강도 조절";
+  if(intent==="팬포커스") return "화면 중앙~전경 부근을 탭해 넓은 영역에 초점";
+  if(intent==="모션블러") return "고정된 배경을 탭해 초점 고정 후 피사체 움직임 담기";
+  if(env[1]==="저조도") return "밝은 부분을 탭해 초점 확보 (필요시 MF)";
+  return "촬영 대상을 화면에서 탭해 초점 지정";
+}
+
+function stabTip(stab, intent){
+  if(intent==="모션블러") return "일부러 담는 블러이므로 손떨림 보정 영향 적음, 삼각대 없이 자연스럽게 움직여도 OK";
+  if(stab==="삼각대 사용") return "삼각대 사용 시 OIS는 큰 의미 없음, 타이머(2~10초)로 흔들림 방지 추천";
+  return "손으로 잡을 때는 양손 + 팔꿈치 고정, OIS 자동 적용됨";
+}
+
+function whiteBalance(env){
+  const [maj,min] = env;
+  if(maj==="장소" && (min==="실내-자연광 없음" || min==="스투디오 (조명 있음)")) return "인공광(텅스텐/형광등) 프리셋 (지원 기종)";
+  if(maj==="시간대" && (min==="골든아워 (노을 직전)" || min==="블루 아워")) return "맑음/그늘 프리셋 (지원 기종)";
+  if(maj==="날씨" && min==="흐림 (부드러운 광)") return "흐림 프리셋 (지원 기종)";
+  return "자동(AWB)";
+}
+
+function exposureComp(env, purpose){
+  const notes = envNotes(env).exp;
+  if(notes.length) return notes.join(" · ");
+  if(purpose==="예술적 표현 - 장노출" || purpose==="예술적 표현 - 의도적 카메라 흔들림") return "0 (수동 셔터로 조절)";
+  return "0 (기본, 필요시 슬라이더로 미세조정)";
+}
+
+function calc(){
+  const subj = currentSubject();
+  const env = ENVIRONMENTS[+$("sel-env").value];
+  const purpose = PURPOSES[+$("sel-purpose").value];
+  const intent = INTENTS[+$("sel-intent").value];
+  const stab = STABS[+$("sel-stab").value];
+  const tech = currentTech();
+  const [major] = subj;
+
+  const pn = purposeNotes(purpose);
+  const en = envNotes(env);
+  const base = BASE[major];
+
+  const shootingMode = pn.shootingModeOverride || shootingModeFor(subj, env, purpose, intent, tech);
+
+  const main = {
+    shootingMode,
+    lens: lensFor(major),
+    exposureComp: exposureComp(env, purpose),
+    focusTip: focusTip(intent, env),
+    stabTip: stabTip(stab, intent),
+    driveMode: pn.drive || driveModeFor(tech, intent, purpose),
+    flash: flashFor(major, env),
+    wb: whiteBalance(env),
+    style: pn.style || "표준",
+    format: pn.format || "JPEG"
+  };
+
+  const isoNote = en.iso.concat(intent==="모션블러" ? [] : []).join(" · ");
+  const shutterNote = en.shutter.join(" · ");
+  const meteringNote = en.metering.concat(base.metering).filter(Boolean);
+
+  const ref = {
+    aperture: base.aperture + (intent==="아웃포커싱" ? " → 최대개방 쪽" : intent==="팬포커스" ? " → f/8 이상으로 조임" : ""),
+    shutter: base.shutter + (shutterNote ? ` (${shutterNote})` : "") + (intent==="모션블러" ? " · 1/30 이하로 저속화" : "") + (stab==="삼각대 사용" ? " · 삼각대면 더 느려도 OK" : " · 손각대면 1/초점거리 이상 권장"),
+    iso: base.iso + (isoNote ? ` (${isoNote})` : ""),
+    metering: meteringNote.join(" · "),
+    focal: base.focal
+  };
+
+  render(subj, env, purpose, intent, stab, tech, main, ref, pn.note);
+}
+
+function render(subj, env, purpose, intent, stab, tech, main, ref, extraNote){
+  const el = $("result");
+  el.innerHTML = `
+    <div class="headline">
+      <div class="tag">추천 촬영모드</div>
+      <div class="val">${main.shootingMode}</div>
+    </div>
+    <div class="card">
+      <div class="section-title">선택한 조건</div>
+      <div class="row"><span class="k">대상</span><span class="v">${label(subj)}</span></div>
+      <div class="row"><span class="k">환경</span><span class="v">${label(env)}</span></div>
+      <div class="row"><span class="k">목적</span><span class="v">${purpose}</span></div>
+      <div class="row"><span class="k">의도</span><span class="v">${intent}</span></div>
+      <div class="row"><span class="k">안정화</span><span class="v">${stab}</span></div>
+      <div class="row"><span class="k">기법</span><span class="v">${tech}</span></div>
+    </div>
+    <div class="card">
+      <div class="section-title">스마트폰 설정</div>
+      <div class="row"><span class="k">렌즈</span><span class="v">${main.lens}</span></div>
+      <div class="row"><span class="k">노출보정(EV)</span><span class="v">${main.exposureComp}</span></div>
+      <div class="row"><span class="k">초점</span><span class="v">${main.focusTip}</span></div>
+      <div class="row"><span class="k">안정화 팁</span><span class="v">${main.stabTip}</span></div>
+      <div class="row"><span class="k">드라이브 모드</span><span class="v">${main.driveMode}</span></div>
+      <div class="row"><span class="k">플래시</span><span class="v">${main.flash}</span></div>
+      <div class="row"><span class="k">화이트밸런스</span><span class="v">${main.wb}</span></div>
+      <div class="row"><span class="k">스타일/필터</span><span class="v">${main.style}</span></div>
+      <div class="row"><span class="k">저장 형식</span><span class="v">${main.format}</span></div>
+      ${extraNote ? `<div class="note">${extraNote}</div>` : ""}
+    </div>
+    <div class="card ref-card">
+      <div class="section-title">프로모드 참고값 (지원 기종만)</div>
+      <div class="row"><span class="k">조리개</span><span class="v">${ref.aperture}</span></div>
+      <div class="row"><span class="k">셔터스피드</span><span class="v">${ref.shutter}</span></div>
+      <div class="row"><span class="k">ISO</span><span class="v">${ref.iso}</span></div>
+      <div class="row"><span class="k">측광</span><span class="v">${ref.metering}</span></div>
+      <div class="row"><span class="k">참고 화각</span><span class="v">${ref.focal}</span></div>
+      <div class="note">대부분의 스마트폰은 조리개가 고정이며, 셔터스피드/ISO/측광은 프로모드를 지원하는 기종에서만 수동 조절할 수 있어요. 기본 모드에서는 위쪽 "스마트폰 설정" 항목을 따라주세요.</div>
+    </div>
+  `;
+  el.classList.add("show");
+  el.scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+$("btn-calc").addEventListener("click", calc);
+
+if("serviceWorker" in navigator){
+  window.addEventListener("load", ()=> navigator.serviceWorker.register("service-worker.js").catch(()=>{}));
+}
+</script>
+</body>
+</html>
