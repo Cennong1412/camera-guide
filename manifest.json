@@ -1,6 +1,6 @@
 {
-  "name": "촬영 설정 가이드",
-  "short_name": "촬영설정",
+  "name": "사진앱",
+  "short_name": "사진앱",
   "description": "대상/환경/목적/의도/안정화/기법을 고르면 카메라 설정을 추천해주는 가이드",
   "start_url": "./index.html",
   "scope": "./",

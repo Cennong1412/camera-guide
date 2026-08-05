@@ -10,6 +10,7 @@ marked.use({ tokenizer: { del() { return undefined; } } });
 
 const ROOT = path.join(__dirname, '..');
 const OUT_DIR = path.join(ROOT, 'pdf');
+const MD_DIR = path.join(ROOT, 'md');
 
 const ORDER = [
   '00_들어가며.md',
@@ -163,7 +164,7 @@ function slugOf(relFile) {
 }
 
 function mdBody(relFile) {
-  const md = fs.readFileSync(path.join(ROOT, relFile), 'utf8');
+  const md = fs.readFileSync(path.join(MD_DIR, relFile), 'utf8');
   let html = marked.parse(md);
   // 첫 h1에 파일명 기반 앵커 id 부여 (통합 PDF 내부 링크 대상)
   html = html.replace('<h1>', `<h1 id="${slugOf(relFile)}">`);

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
-<title>촬영 설정 가이드</title>
+<title>사진앱</title>
 <meta name="description" content="대상/환경/목적/의도/안정화/기법을 고르면 스마트폰 카메라 설정을 추천해주는 가이드">
 <meta name="theme-color" content="#1b1b1f">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="촬영설정">
+<meta name="apple-mobile-web-app-title" content="사진앱">
 <link rel="icon" href="icons/icon-192.png">
 <style>
   :root{
@@ -106,9 +106,10 @@
   .note{font-size:0.75rem;color:var(--sub);margin-top:10px;line-height:1.5;}
   footer{max-width:640px;margin:0 auto;padding:10px 16px 30px;font-size:0.7rem;color:var(--sub);text-align:center;}
   nav.tabs{display:flex;gap:8px;max-width:640px;margin:0 auto;padding:12px 14px 0;}
-  nav.tabs button{
+  nav.tabs button, nav.tabs a{
     flex:1;padding:10px;border-radius:10px;border:1px solid var(--line);
     background:var(--card);color:var(--sub);font-size:0.85rem;font-weight:700;
+    text-align:center;text-decoration:none;box-sizing:border-box;
   }
   nav.tabs button.active{background:var(--accent);color:#1b1408;border-color:var(--accent);}
   .guide-list a{
@@ -124,13 +125,14 @@
 <body>
 
 <header>
-  <h1>📷 촬영 설정 가이드</h1>
+  <h1>📷 사진앱</h1>
   <p>대상 · 환경 · 목적 · 의도 · 안정화 · 기법을 고르면 스마트폰 카메라 설정을 추천해드려요</p>
 </header>
 
 <nav class="tabs">
   <button id="nav-calc" class="active">설정 계산기</button>
   <button id="nav-guide">촬영 가이드 자료</button>
+  <a id="nav-snapseed" href="guide/pdf/Snapseed_완벽가이드.pdf" target="_blank" rel="noopener">Snapseed 사용</a>
 </nav>
 
 <main id="view-calc">
